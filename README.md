@@ -1,27 +1,91 @@
-# MedWorkspace
+# Medatus Button
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
+A customizable button library for Angular applications.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+To install this library, run:
 
-## Code scaffolding
+Copy code
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+`npm install medatus-button`
 
-## Build
+## Usage
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Import the `MedatusButtonModule` in your Angular application:
 
-## Running unit tests
+```typescript
+import { MedatusButtonModule } from "medatus-button";
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@NgModule({
+  imports: [MedatusButtonModule],
+  // ...
+})
+export class AppModule {}
+```
 
-## Running end-to-end tests
+Use the `medatus-button` directive in your template:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```html
+<button medatus-button>Click me</button>
+```
 
-## Further help
+## Customization
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The `medatus-button` directive supports several inputs for customization:
+
+### `medatusButton` (required)
+
+This input is required for the directive to work. It should be set to a string value.
+
+### `size` (optional)
+
+This input sets the size of the button. It can be one of the following values:
+
+- `small`
+- `medium` (default)
+- `large`
+
+### `type` (optional)
+
+This input sets the type of the button. It can be one of the following values:
+
+- `filled` (default)
+- `outline`
+- `text`
+
+### `color` (optional)
+
+This input sets the color of the button. It can be any valid CSS color value. The default value is `primary`.
+
+### `shape` (optional)
+
+This input sets the shape of the button. It can be one of the following values:
+
+- `rounded`
+- `square`
+- `pilled` (default)
+
+## Events
+
+The `medatus-button` directive supports the following events:
+
+- `mouseenter` and `mouseleave` for hover state
+- `mousedown` and `mouseup` for active state
+- `focus` and `blur` for focus state
+
+## Example
+
+Here is an example of a customized `medatus-button`:
+
+```html
+<button
+  medatus-button
+  size="large"
+  type="outline"
+  color="orange"
+  shape="rounded"
+>
+  Click me
+</button>
+```
