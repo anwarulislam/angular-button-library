@@ -120,3 +120,21 @@ $medatus-button-focus-border-color: #192143;
   @include generate-sized-buttons;
   @include generate-shaped-buttons;
 }
+
+.medatus-button-group {
+  display: flex;
+  align-items: center;
+
+  .medatus-button {
+    &:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: 1px solid $medatus-button-focus-border-color !important;
+    }
+  }
+}
