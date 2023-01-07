@@ -1,0 +1,36 @@
+.showcase {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+  height: 100vh;
+  align-items: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  text-align: center;
+  tr {
+    border-bottom: 1px solid #ddd;
+  }
+
+  td,
+  th {
+    padding: 12px;
+    text-align: center;
+
+    // border-right
+    border-right: 1px solid #ddd;
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  td {
+    text-align: left;
+  }
+}

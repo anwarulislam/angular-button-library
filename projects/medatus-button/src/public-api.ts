@@ -3,5 +3,5 @@
  */
 
 export * from './lib/medatus-button.service';
-export * from './lib/medatus-button.component';
+export * from './lib/medatus-button.directive';
 export * from './lib/medatus-button.module';

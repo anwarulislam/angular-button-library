@@ -1,0 +1,122 @@
+// PRIMARY
+$medatus-button-bg-primary: #3f4fa0;
+$medatus-button-hover-bg-primary: #394892;
+$medatus-button-active-bg-primary: #2d3872;
+$medatus-button-color-primary: #fff;
+
+// SECONDARY
+$medatus-button-bg-secondary: #ecedf6;
+$medatus-button-hover-bg-secondary: #d9dcec;
+$medatus-button-active-bg-secondary: #c5cae3;
+$medatus-button-color-secondary: #3f4fa0;
+
+// COMMON
+$medatus-button-bg-disabld-bg: #e4e4e4;
+$medatus-button-bg-disabled-color: #a2a2a2;
+
+$medatus-button-shape-squared: 0;
+$medatus-button-shape-rounded: 4px;
+$medatus-button-shape-pilled: 3rem;
+
+$medatus-button-focus-border-width: 2px;
+$medatus-button-focus-border-color: #192143;
+
+@mixin generate-shaped-buttons {
+  &.button-shape-squared {
+    border-radius: $medatus-button-shape-squared;
+  }
+
+  &.button-shape-rounded {
+    border-radius: $medatus-button-shape-rounded;
+  }
+
+  &.button-shape-pilled {
+    border-radius: $medatus-button-shape-pilled;
+  }
+}
+
+@mixin generate-sized-buttons {
+  &.button-size-small {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  &.button-size-medium {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  &.button-size-large {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+// FILLED BUTTON GENERATOR MIXINS
+@mixin generate-button-filled($bg, $color, $hover-bg: $bg, $active-bg: $bg) {
+  background: $bg;
+  color: $color;
+  border: 0;
+  outline: 0;
+
+  &:hover,
+  &.medatus-button-hover {
+    background: $hover-bg;
+  }
+
+  &:active,
+  &.medatus-button-active {
+    background: $active-bg;
+  }
+
+  &:disabled,
+  &.medatus-button-disabled {
+    background: $medatus-button-bg-disabld-bg;
+    color: $medatus-button-bg-disabled-color;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+
+  &:focus-visible,
+  &.medatus-button-focus {
+    outline: $medatus-button-focus-border-width dashed
+      $medatus-button-focus-border-color;
+    outline-offset: 2px;
+  }
+}
+
+@mixin generate-filled-buttons {
+  &.medatus-button-filled {
+    &.button-color-primary {
+      @include generate-button-filled(
+        $medatus-button-bg-primary,
+        $medatus-button-color-primary,
+        $medatus-button-hover-bg-primary,
+        $medatus-button-active-bg-primary
+      );
+    }
+    &.button-color-secondary {
+      @include generate-button-filled(
+        $medatus-button-bg-secondary,
+        $medatus-button-color-secondary,
+        $medatus-button-hover-bg-secondary,
+        $medatus-button-active-bg-secondary
+      );
+    }
+  }
+}
+
+// FINAL BUTTON
+.medatus-button {
+  font-weight: bold;
+  box-sizing: border-box;
+  display: inline-flex;
+  cursor: pointer;
+  transition: background 0.2s, border 0.2s;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+
+  @include generate-filled-buttons;
+  @include generate-sized-buttons;
+  @include generate-shaped-buttons;
+}

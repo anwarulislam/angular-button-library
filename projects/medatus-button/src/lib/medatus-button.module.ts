@@ -1,16 +1,9 @@
 import { NgModule } from '@angular/core';
-import { MedatusButtonComponent } from './medatus-button.component';
-
-
+import { MedatusButtonDirective } from './medatus-button.directive';
 
 @NgModule({
-  declarations: [
-    MedatusButtonComponent
-  ],
-  imports: [
-  ],
-  exports: [
-    MedatusButtonComponent
-  ]
+  declarations: [MedatusButtonDirective],
+  imports: [],
+  exports: [MedatusButtonDirective],
 })
-export class MedatusButtonModule { }
+export class MedatusButtonModule {}
