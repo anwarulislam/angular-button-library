@@ -2,14 +2,6 @@
 
 A customizable button library for Angular applications.
 
-## Installation
-
-To install this library, run:
-
-Copy code
-
-`npm install medatus-button`
-
 ## Usage
 
 Import the `MedatusButtonModule` in your Angular application:
@@ -51,8 +43,6 @@ This input sets the size of the button. It can be one of the following values:
 This input sets the type of the button. It can be one of the following values:
 
 - `filled` (default)
-- `outline`
-- `text`
 
 ### `color` (optional)
 
@@ -72,7 +62,7 @@ The `medatus-button` directive supports the following events:
 
 - `mouseenter` and `mouseleave` for hover state
 - `mousedown` and `mouseup` for active state
-- `focus` and `blur` for focus state
+- `focus-visible` and `blur` for focus state
 
 ## Example
 
@@ -83,7 +73,7 @@ Here is an example of a customized `medatus-button`:
   medatus-button
   size="large"
   type="outline"
-  color="orange"
+  color="primary"
   shape="rounded"
 >
   Click me
